@@ -1,23 +1,230 @@
-/* Typography and Color Scheme */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap');
 
+/* General Styles */
 body {
   font-family: 'Roboto', sans-serif;
   color: #333;
-  background: #f0f2f5; /* Light gray background for subtle contrast */
+  background: linear-gradient(135deg, #00548f, #038039); /* Darker gradient */
+  background-attachment: fixed;
+  background-size: cover;
   line-height: 1.6;
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
 }
 
+/* Headings */
 h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
-  color: #2c3e50; /* Dark blue-gray for headings */
+  color: #ffffff; /* Brighter contrast for dark background */
+  margin-bottom: 1rem;
 }
 
+h1 {
+  font-size: 2.8rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #ffffff; /* Bold white for title */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add depth to the heading */
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  position: relative;
+  color: #2c3e50;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #4CAF50;
+  margin: 0.5rem auto;
+  border-radius: 2px;
+}
+
+/* Links */
 a {
-  color: #007ACC;
-  transition: color 0.3s ease;
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 a:hover {
-  color: #005fa3;
+  color: #038839;
+  transform: scale(1.1); /* Slight pop effect */
+}
+
+/* Navigation */
+header {
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent dark header */
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+}
+
+#nav-toggle {
+  display: none;
+}
+
+/* Sections */
+main {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #ffffff, #f7f9fc); /* Light gradient background */
+  padding: 2rem;
+  border-radius: 15px; /* Softer rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+  position: relative;
+  overflow: hidden; /* For background shapes */
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(0, 122, 204, 0.1);
+  border-radius: 50%;
+  top: -20px;
+  left: -20px;
+}
+
+section::after {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: rgba(0, 122, 204, 0.05);
+  border-radius: 50%;
+  bottom: -30px;
+  right: -30px;
+}
+
+/* Typography in Sections */
+section h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+section p {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-top: 1rem;
+}
+
+/* Profile Picture */
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 6px solid #4CAF50; /* Green border for emphasis */
+  margin: 1rem auto;
+  display: block;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.1); /* More pronounced zoom */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem; /* More spacing between projects */
+}
+
+.project {
+  padding: 1.5rem;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 15px; /* Softer corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  background-color: #f9f9f9;
+}
+
+.project h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.project p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Footer */
+footer {
+  background: rgba(0, 0, 0, 0.9); /* Dark footer to match theme */
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+
+  #nav-toggle {
+    display: block;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }

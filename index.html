@@ -2,262 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Yonas Seyoum, aspiring Java developer. Explore my projects and professional journey." />
   <title>Yonas Seyoum - Portfolio</title>
-  
-  <!-- Embedded CSS -->
-  <style>
-    /* Import Google Fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap');
-
-    /* Global Reset and Base Styling */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    
-    body {
-      font-family: 'Roboto', sans-serif;
-      color: #333;
-      background: #f0f2f5;
-      line-height: 1.6;
-    }
-
-    /* Typography and Color Scheme */
-    h1, h2, h3 {
-      font-family: 'Montserrat', sans-serif;
-      color: #2c3e50;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #007ACC;
-      display: inline-block;
-      padding-bottom: 0.3rem;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.7rem;
-      color: #007ACC;
-    }
-
-    a {
-      color: #007ACC;
-      transition: color 0.3s ease;
-      text-decoration: none;
-    }
-
-    a:hover {
-      color: #005fa3;
-    }
-
-    /* Layout Enhancements */
-    header, footer {
-      background: #fff;
-      padding: 1.5rem 0;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    #nav-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: #007ACC;
-    }
-
-    nav ul {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    main {
-      max-width: 1100px;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
-    }
-
-    section {
-      margin-bottom: 3rem;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-
-    footer {
-      border-top: 1px solid #e0e0e0;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #666;
-    }
-
-    /* Visual Hierarchy and Spacing */
-    p {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .profile-pic {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #007ACC;
-      margin: 1rem auto;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-
-    .profile-pic:hover {
-      transform: scale(1.05);
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .project {
-      background: #fff;
-      border: 1px solid #ddd;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
-
-    .project p {
-      margin-bottom: 1rem;
-      color: #555;
-    }
-
-    /* Interactive Elements */
-    button, .project a {
-      display: inline-block;
-      padding: 0.7rem 1.5rem;
-      background: #007ACC;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-
-    button:hover, .project a:hover {
-      background: #005fa3;
-      transform: scale(1.05);
-    }
-
-    /* Form Elements */
-    input, textarea {
-      width: 100%;
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-      transition: border-color 0.3s ease;
-    }
-
-    input:focus, textarea:focus {
-      border-color: #007ACC;
-      outline: none;
-    }
-
-    /* Additional Enhancements */
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Responsive Design Improvements */
-
-    /* Navigation Toggle for Mobile */
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-        display: none;
-        width: 100%;
-      }
-
-      nav ul.open {
-        display: flex;
-      }
-
-      #nav-toggle {
-        display: block;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* Adjust Font Sizes on Smaller Screens */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      h2 {
-        font-size: 1.75rem;
-      }
-
-      h3 {
-        font-size: 1.3rem;
-      }
-
-      button, .project a {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-      }
-
-      main {
-        margin: 1rem;
-        padding: 0 1rem;
-      }
-
-      section {
-        padding: 1rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <nav>
       <h1>Yonas Seyoum</h1>
-      <button id="nav-toggle" aria-label="Toggle navigation">&#9776;</button> <!-- Hamburger Icon -->
+      <button id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#work">Projects</a></li>
-        <!-- Removed Contact link as per previous instructions -->
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -265,7 +24,7 @@
   <main>
     <section id="about">
       <h2>About Me</h2>
-      <img src="pic.jpeg" alt="Portrait of Yonas Seyoum" class="profile-pic"/>
+      <img src="pic.jpeg" alt="Portrait of Yonas Seyoum" class="profile-pic" />
       <p>
         Hi, I'm Yonas Seyoum. I'm an aspiring Java developer passionate about building scalable web applications and integrating cutting-edge technologies like AI and machine learning. Currently pursuing a BS in Computer Science (Graduating March 2025), I'm looking for opportunities as a junior developer to create impactful software solutions. Let's connect!
       </p>
@@ -276,16 +35,39 @@
       <div class="projects-grid">
         <article class="project">
           <h3>Project One</h3>
-          <p>A single-page application built with React.</p>
-          <a href="https://github.com/janedoe/project-one">View Source</a>
+          <p>A single-page application displaying real-time cryptocurrency prices.</p>
+          <a href="https://price-astro.vercel.app" target="_blank">Live Demo</a> | 
+          <a href="https://github.com/Seyoumyonas/Price_Astro" target="_blank">View Source</a>
         </article>
+        
         <article class="project">
           <h3>Project Two</h3>
-          <p>A portfolio site styled with CSS Grid.</p>
-          <a href="https://github.com/janedoe/project-two">View Source</a>
+          <p>A portfolio site built with Tailwind CSS, featuring a dynamic display of the current date and time</p>
+          <a href="https://tail-wind-proj2.vercel.app/" target="_blank">Live Demo</a> | 
+          <a href="https://github.com/Seyoumyonas/TailWind_Proj2" target="_blank">View Source</a>
         </article>
-        <!-- Add more projects as needed -->
+        
       </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>Java, Spring Boot</li>
+        <li>React, JavaScript</li>
+        <li>SQL, MySQL</li>
+        <li>Git, GitHub</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Feel free to reach out to me through any of the following channels:</p>
+      <ul>
+        <li><a href="https://github.com/Seyoumyonas">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/yonas-seyoum/">LinkedIn</a></li>
+        <li><a href="mailto:yonasseyoum@email.com">Email</a></li>
+      </ul>
     </section>
   </main>
 
@@ -293,16 +75,6 @@
     <p>© 2024 Yonas Seyoum. All rights reserved.</p>
   </footer>
 
-  <!-- Responsive Navigation Toggle Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const navToggle = document.getElementById('nav-toggle');
-      const navUl = document.querySelector('nav ul');
-
-      navToggle.addEventListener('click', () => {
-        navUl.classList.toggle('open');
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
